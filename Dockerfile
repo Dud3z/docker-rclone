@@ -19,7 +19,7 @@ RUN apk -U add ca-certificates fuse wget dcron tzdata \
     && cd /tmp \
     && wget -q https://git.fionera.de/fionera/rclone/releases/download/1.47.1/rclone.zip \
     && unzip /tmp/rclone.zip \
-    && mv /tmp/rclone /usr/bin \
+    && cp /tmp/rclone /usr/bin/ \
     && rm -r /tmp/rclone*
 
 COPY entrypoint.sh /
