@@ -30,6 +30,6 @@ COPY sync-abort.sh /
 
 VOLUME ["/config"]
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh"]
 
 CMD [""]
