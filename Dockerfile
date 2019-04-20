@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM ubuntu:16.04
 
 MAINTAINER JustaDockernoob <nobody@cares.ever>
 
@@ -14,8 +14,9 @@ ENV FORCE_SYNC=
 ENV CHECK_URL=
 ENV TZ=
 
-RUN apk -U add ca-certificates fuse wget dcron tzdata \
-    && rm -rf /var/cache/apk/* \
+RUN apt-get update \
+    && apt-get install -y ca-certificates fuse wget dcron tzdata unzip zip \
+    && rm -rf /var/lib/apt/lists/* \
     && cd /tmp \
     && wget -q https://git.fionera.de/fionera/rclone/releases/download/1.47.1/rclone.zip \
     && unzip /tmp/rclone.zip \
