@@ -19,9 +19,7 @@ RUN apk -U add ca-certificates fuse wget dcron tzdata \
     && cd /tmp \
     && wget -q https://git.fionera.de/fionera/rclone/releases/download/1.47.1/rclone.zip \
     && unzip /tmp/rclone.zip \
-    && mv -v rclone /usr/bin/ \
-    && chown root:root /usr/bin/rclone \
-    && chmod 755 /usr/bin/rclone \
+    && mv -v rclone /usr/bin/local \
     && rm -r /tmp/rclone*
 
 COPY entrypoint.sh /
@@ -30,6 +28,6 @@ COPY sync-abort.sh /
 
 VOLUME ["/config"]
 
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/entrypoint.sh"]
 
 CMD [""]
