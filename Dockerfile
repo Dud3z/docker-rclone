@@ -15,7 +15,7 @@ ENV CHECK_URL=
 ENV TZ=
 
 RUN apt-get update \
-    && apt-get install -y ca-certificates fuse wget tzdata unzip zip \
+    && apt-get install -y ca-certificates fuse wget libterm-readline-gnu-perl apt-utils tzdata unzip zip \
     && rm -rf /var/lib/apt/lists/* \
     && cd /tmp \
     && wget -q https://git.fionera.de/fionera/rclone/releases/download/1.47.2/rclone.zip \
