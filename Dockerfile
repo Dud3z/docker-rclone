@@ -18,7 +18,7 @@ RUN apt-get update \
     && apt-get install -y ca-certificates fuse wget tzdata unzip zip \
     && rm -rf /var/lib/apt/lists/* \
     && cd /tmp \
-    && wget -q https://git.fionera.de/fionera/rclone/releases/download/1.47.1/rclone.zip \
+    && wget -q https://git.fionera.de/fionera/rclone/releases/download/1.47.2/rclone.zip \
     && unzip /tmp/rclone.zip \
     && mv -v rclone /usr/bin \
     && rm -r /tmp/rclone*
